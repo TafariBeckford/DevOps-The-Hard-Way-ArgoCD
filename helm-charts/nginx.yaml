@@ -7,9 +7,9 @@ spec:
   project: default
   source:
     path: helm-charts
-    chart: nginx-stable/nginx-ingress
-    repoURL: https://github.com/nginxinc/kubernetes-ingress
-    targetRevision: 3.0.2
+    chart: ingress-nginx/ingress-nginx
+    repoURL: https://kubernetes.github.io/ingress-nginx
+    targetRevision: 4.5.2
     helm:
       releaseName: nginx-ingress
       valueFiles:
@@ -22,6 +22,6 @@ spec:
     syncOptions:
     - CreateNamespace=true
 
-  automated:
-    prune: true
-    selfHeal: true
+    automated:
+      prune: true
+      selfHeal: true
