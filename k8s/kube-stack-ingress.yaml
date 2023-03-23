@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: kube-stack
+  annotations: 
+    kubernetes.io/ingress.class: nginx
+  name: kube-stack-ingress
+  labels:
+    name: kube-stack-ingress
+   
+spec:
+  rules:
+  - host: grafana.tafaribeckford.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: kube-community-grafana 
+            port: 
+              number: 80
+
+  - host: prom.tafaribeckford.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: kube-community-kube-promet-prometheus
+            port: 
+              number: 9090
+
+
