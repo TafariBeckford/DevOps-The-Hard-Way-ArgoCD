@@ -19,26 +19,4 @@ spec:
             name: uber-service
             port: 
               number: 80
-  - host: grafana.tafaribeckford.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: kube-community-grafana 
-            port: 
-              number: 80
-
-  - host: prom.tafaribeckford.com
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: kube-community-kube-promet-prometheus
-            port: 
-              number: 9090
-
-
+ 
