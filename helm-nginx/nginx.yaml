@@ -6,14 +6,13 @@ metadata:
 spec:
   project: default
   source:
-    path: helm-charts
-    chart: ingress-nginx/ingress-nginx
+    chart: ingress-nginx
     repoURL: https://kubernetes.github.io/ingress-nginx
-    targetRevision: 4.5.2
+    targetRevision: 4.5.0
     helm:
       releaseName: nginx-ingress
       valueFiles:
-      - nginx-ingress-values.yaml
+      - values.yaml
   destination:
     server: "https://kubernetes.default.svc"
     namespace: nginx
