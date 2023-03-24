@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: logstash
+  namespace: argocd
+spec:
+  project: default
+  sources:
+  - repoURL: 'https://helm.elastic.co'
+    chart: logstash
+    targetRevision: 8.5.1
+    helm:
+      valueFiles: 
+      - $values/helm-elk/logstash-values.yaml 
+  - repoURL: 'https://github.com/TafariBeckford/DevOps-The-Hard-Way-ArgoCD.git'
+    targetRevision: HEAD
+    ref: values
+   
+
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: logging
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      prune: true
+      selfHeal: true

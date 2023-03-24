@@ -1,0 +1,4 @@
+  filebeatconfig:
+    output.logstash:
+        hosts: '["logstash-logstash:5044"]'
+        
