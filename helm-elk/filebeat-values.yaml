@@ -1,5 +1,5 @@
-  filebeatconfig:
-
+daemonset:
+  filebeatConfig:
     filebeat.yml: |
       filebeat.inputs:
       - type: container
@@ -13,10 +13,5 @@
                 logs_path: "/var/log/containers/"
 
     output.logstash:
-        hosts: '["logstash-logstash:5044"]'
-
-    secretMounts:
-    - name: elasticsearch-master-certs
-      secretName: elasticsearch-master-certs
-      path: /usr/share/filebeat/certs/
+        hosts: ["logstash-logstash:5044"]
         
