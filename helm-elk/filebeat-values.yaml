@@ -12,6 +12,6 @@
             - logs_path:
                 logs_path: "/var/log/containers/"
 
-    output.logstash:
-        hosts: "logstash-logstash:5044"
+      output.logstash:
+        hosts: '["logstash-logstash:5044"]'
  
