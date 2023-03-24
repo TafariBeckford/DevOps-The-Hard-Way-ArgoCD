@@ -2,7 +2,7 @@ logstashPipeline:
   logstash.conf: |
     input {
      beats {
-        port => 5066
+        port => 5044
       }
     }
     output { elasticsearch { hosts => "http://elasticsearch-master:9200" } }
