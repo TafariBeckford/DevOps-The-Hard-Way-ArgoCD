@@ -14,4 +14,9 @@
 
     output.logstash:
         hosts: '["logstash-logstash:5044"]'
+
+    secretMounts:
+    - name: elasticsearch-master-certs
+      secretName: elasticsearch-master-certs
+      path: /usr/share/filebeat/certs/
         
