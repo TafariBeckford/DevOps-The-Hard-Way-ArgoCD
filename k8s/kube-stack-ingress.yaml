@@ -17,7 +17,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: kube-community-grafana 
+            name: kube-stack-grafana 
             port: 
               number: 80
 
@@ -28,7 +28,7 @@ spec:
         path: "/"
         backend:
           service:
-            name: kube-community-kube-promet-prometheus
+            name: kube-stack-kube-prometheus-prometheus 
             port: 
               number: 9090
 
